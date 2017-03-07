@@ -37,11 +37,6 @@ var P;  // matrix storing the projection transformation
 var near = 10;      // near clipping plane's distance
 var far = 120;      // far clipping plane's distance
 
-// Animation variables
-var time = 0.0;      // time, our global time constant, which is 
-                     // incremented every frame
-var timeDelta = 0.5; // the amount that time is updated each fraime
-
 //---------------------------------------------------------------------------
 //
 //  init() - scene initialization function
@@ -93,7 +88,6 @@ function init() {
 //
 
 function render() {
-  time += timeDelta;
 
   var ms = new MatrixStack();
 
@@ -159,35 +153,43 @@ function renderSolarObject( name, ms ) {
 	switch (name) {
 		
 		case 'Moon':
-			
-			
-			
-			//then transform around the earth
-			ms.push();
-			ms.rotate((360/SolarSystem['Earth'].year) * time, [0, 0, 1]);
-			ms.push();
-			ms.translate(SolarSystem['Earth'].distance, 0, 0);
-			
+		
 			ms.push();
 			ms.rotate((360/data.year) * time, [0, 0, 1]);
 			ms.push();
 			ms.translate(data.distance, 0, 0);
 			
 			break;
+		
+		case 'Sun':
+		
+			//then transform around the earth
+			ms.push();
+			ms.rotate((360/SolarSystem['Earth'].year) * time, [0, 0, 1]);
+			ms.push();
+			ms.translate(SolarSystem['Earth'].distance, 0, 0);
+			break;
 			
 		case 'Mercury':
 		case 'Venus':
-		case 'Earth':
 		case 'Mars':
 		case 'Jupiter':
 		case 'Saturn':
 		case 'Uranus':
 		case 'Neptune':
+		
+			//then transform around the earth
+			ms.push();
+			ms.rotate((360/SolarSystem['Earth'].year) * time, [0, 0, 1]);
+			ms.push();
+			ms.translate(SolarSystem['Earth'].distance, 0, 0);
+		
 			ms.push();
 			ms.rotate((360/data.year)* time, [0, 0, 1]);
 			ms.push();
 			ms.translate(data.distance, 0, 0);
 			break;
+			
 		default:
 	}
 	
@@ -201,18 +203,25 @@ function renderSolarObject( name, ms ) {
 	ms.pop();
 	
 	switch (name) {
-		case 'Moon':// Needs 2 more pops
+		case 'Moon':
 			ms.pop();
 			ms.pop();
+			break;
+		
+		case 'Sun':
+			ms.pop();
+			ms.pop();
+			break;
 			
 		case 'Mercury':
 		case 'Venus':
-		case 'Earth':
 		case 'Mars':
 		case 'Jupiter':
 		case 'Saturn':
 		case 'Uranus':
 		case 'Neptune':
+			ms.pop();
+			ms.pop();
 			ms.pop();
 			ms.pop();
 			break;
