@@ -26,8 +26,7 @@ var Planets = {
   // Jupiter : undefined,
   // Saturn : undefined,
   // Uranus : undefined,
-  // Neptune : undefined,
-  // Pluto : undefined
+  // Neptune : undefined
 };
 
 // Viewing transformation parameters
