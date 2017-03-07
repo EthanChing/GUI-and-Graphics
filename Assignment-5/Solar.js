@@ -110,7 +110,7 @@ function render() {
   renderSolarObject( "Mercury", ms );
   renderSolarObject( "Venus", ms );
   renderSolarObject( "Earth", ms );
-  //renderSolarObject( "Moon", ms );
+  renderSolarObject( "Moon", ms );
   renderSolarObject( "Mars", ms );
   renderSolarObject( "Jupiter", ms );
   renderSolarObject( "Saturn", ms );
@@ -159,16 +159,20 @@ function renderSolarObject( name, ms ) {
 	switch (name) {
 		
 		case 'Moon':
-			ms.push();
-			ms.rotate((360/data.year) * time, [0, 0, 1]);
-			ms.push();
-			ms.translate(data.distance * 10, 0, 0);
+			
+			
 			
 			//then transform around the earth
 			ms.push();
 			ms.rotate((360/SolarSystem['Earth'].year) * time, [0, 0, 1]);
 			ms.push();
-			ms.translate(SolarSystem['Earth'].distance * 10, 0, 0);
+			ms.translate(SolarSystem['Earth'].distance, 0, 0);
+			
+			ms.push();
+			ms.rotate((360/data.year) * time, [0, 0, 1]);
+			ms.push();
+			ms.translate(data.distance, 0, 0);
+			
 			break;
 			
 		case 'Mercury':
@@ -182,7 +186,7 @@ function renderSolarObject( name, ms ) {
 			ms.push();
 			ms.rotate((360/data.year)* time, [0, 0, 1]);
 			ms.push();
-			ms.translate(data.distance * 10, 0, 0);
+			ms.translate(data.distance, 0, 0);
 			break;
 		default:
 	}
@@ -198,8 +202,6 @@ function renderSolarObject( name, ms ) {
 	
 	switch (name) {
 		case 'Moon':// Needs 2 more pops
-			ms.pop();
-			ms.pop();
 			ms.pop();
 			ms.pop();
 			
