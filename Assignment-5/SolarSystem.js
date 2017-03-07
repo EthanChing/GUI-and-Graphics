@@ -36,26 +36,26 @@ var SolarSystem = {
     color : [ 1.0, 0.0, 0.0, 1.0 ]
   },
   Jupiter : {
-    radius : 11.21,
-    distance : 5.20,
+    radius : 11.21/4,
+    distance : 5.20/2.5,
     year : 11.9,
     color : [ 1.0, 153/255, 0.0, 1.0 ]
   },
   Saturn : {
-    radius : 9.45,
-    distance : 9.58,
+    radius : 9.45/4,
+    distance : 9.58/3,
     year : 29.4,
     color : [ 1.0, 1.0, 0.0, 1.0 ]
   },
   Uranus : {
-    radius : 4.01,
-    distance : 19.20,
+    radius : 4.01/4,
+    distance : 19.20/4,
     year : 83.7,
     color : [ 0.0, 0.1, 1.0, 1.0 ]
   },
   Neptune : {
-    radius : 3.88,
-    distance : 30.05,
+    radius : 3.88/4,
+    distance : 30.05/5,
     year : 163.7,
     color : [ 0.0, 0.0, 1.0, 1.0 ]
   },
