@@ -27,15 +27,15 @@ to work in the new system.
 
 ## Steps to complete
 
-[x] Get a working GLFW window to render
-[ ] Implement a bare bones ECS to hold the scripts
-[ ] Make a camera, transform, material, mesh, and renerder component
-[ ] make a simple component that moves stuff
+- [x] Get a working GLFW window to render
+- [ ] Implement a bare bones ECS to hold the scripts
+- [ ] Make a camera, transform, material, mesh, and renerder component
+- [ ] make a simple component that moves stuff
 
 *Asignment Done*
 
-[ ] Make a physicsBody component
-[ ] Make a collider component and a working collsision system (AABB for now)
-[ ] Implement the core parts of Colors or implement some other basic game
+- [ ] Make a physicsBody component
+- [ ] Make a collider component and a working collsision system (AABB for now)
+- [ ] Implement the core parts of Colors or implement some other basic game
 
 *Stretch complete*
