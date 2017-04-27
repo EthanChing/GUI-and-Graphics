@@ -30,11 +30,12 @@ to work in the new system.
 - [x] Get a working GLFW window to render
 - [x] Implement a bare bones ECS to hold the scripts
 - [x] Make transform component
-- [ ] Make renerder component
-- [ ] Make camera component 
+- [x] Make renerder component
+- [x] Make camera component
+- [x] make a simple component that moves stuff
+- [ ] Make mesh renderer component
 - [ ] Make material component
-- [ ] Make mesh component
-- [ ] make a simple component that moves stuff
+
 
 *Asignment Done*
 
