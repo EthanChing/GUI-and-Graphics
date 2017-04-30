@@ -33,8 +33,8 @@ to work in the new system.
 - [x] Make renerder component
 - [x] Make camera component
 - [x] make a simple component that moves stuff
-- [ ] Make mesh renderer component
-- [ ] Make material component
+- [x] Make mesh renderer component
+- [ ] Add texture support to mesh renderer
 
 
 *Asignment Done*
